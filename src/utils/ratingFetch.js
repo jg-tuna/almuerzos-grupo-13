@@ -8,7 +8,7 @@ const fetchRating = (setRating, userId, restaurantId, currentUser) => {
   if (!currentUser) {
     return 
   }
-  fetch(`/ratings/${restaurantId}`, {
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/ratings/${restaurantId}`, {
     method: 'GET', 
     headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' },})
     .then((response) => response.json())
@@ -39,7 +39,7 @@ const fetchRatingId = (setRatingId, userId, restaurantId, currentUser) => {
   if (!currentUser) {
     return
   }
-  fetch(`/ratings/${restaurantId}`, {
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/ratings/${restaurantId}`, {
     method: 'GET', 
     headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' },})
     .then((response) => response.json())
@@ -70,7 +70,7 @@ const fetchRatings = (setMeanRating, userId, restaurantId, currentUser) => {
   if (!currentUser) {
     return
   }
-  fetch(`/ratings/${restaurantId}/all`, {
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/ratings/${restaurantId}/all`, {
     method: 'GET', 
     headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' },})
     .then((response) => response.json())

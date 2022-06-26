@@ -14,7 +14,7 @@ const fetchLocals = (setIsLoading, setIsError, setLocals) => {
 }
 
 const fetchLocal = (setIsLoading, setIsError, id, setLocal) => {
-  fetch(`/restaurants/${id}`)
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`)
     .then((response) => response.json())
     .then((data) => {
       setIsLoading(false);
@@ -28,7 +28,7 @@ const fetchLocal = (setIsLoading, setIsError, id, setLocal) => {
 }
 
 const fetchFavorites = async (setIsLoading, setIsError, userId, setFavorites) => {
-  const currentData = await fetch(`/users/${userId}/favorites`, {
+  const currentData = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/users/${userId}/favorites`, {
     method: 'GET'
     });
   let info = await currentData.json();
@@ -36,7 +36,7 @@ const fetchFavorites = async (setIsLoading, setIsError, userId, setFavorites) =>
   setIsLoading(false);
   setFavorites(array);
 
-  // fetch(`/users/${userId}/favorites`)
+  // fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/users/${userId}/favorites`)
   //   .then((response) => response.json())
   //   .then((data) => console.log(data.favorites))
   //   .then((data) => {

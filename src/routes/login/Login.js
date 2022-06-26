@@ -23,7 +23,7 @@ function Login(props) {
 
   const submit = async (e) => {
     e.preventDefault();
-    let res = await fetch("/users/login", {
+    let res = await fetch("https://almuerzos-grupo-13-backend.herokuapp.com/users/login", {
       method: "POST",
       body: JSON.stringify({
         email: email,

@@ -14,7 +14,7 @@ function EditReview() {
             // console.log("fetchdata de food")
             // console.log("id de food")
             // console.log(id)
-            const currentData = await fetch(`/reviews/${id}`, {
+            const currentData = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reviews/${id}`, {
             method: 'GET', 
             headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' }
             });
@@ -29,7 +29,7 @@ function EditReview() {
             // console.log("fetchdata de restaurant")
             // console.log("id del restaurante")
             // console.log(info.RestaurantId)SSSSSSS
-            // const currentDataRestaurant = await fetch(`/restaurants/${info.RestaurantId}`, {
+            // const currentDataRestaurant = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${info.RestaurantId}`, {
             // method: 'GET',
             // headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' }
             // });
@@ -56,7 +56,7 @@ function EditReview() {
 
     const submit = async (e) => {
         e.preventDefault();
-        await fetch(`/reviews/${id}`, {
+        await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reviews/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             content: content,

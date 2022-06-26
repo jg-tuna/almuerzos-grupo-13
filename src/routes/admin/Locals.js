@@ -13,7 +13,7 @@ const AdminLocals = () => {
 
   const navigate = useNavigate();
   const onClickDelete = (id) => {
-    fetch(`/restaurants/${id}`, requestOptions('DELETE', currentUser)).then(() =>
+    fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`, requestOptions('DELETE', currentUser)).then(() =>
       {setLocals(locals.filter(users => users.id !== id))}
     );
   }

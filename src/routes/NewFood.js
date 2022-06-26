@@ -29,7 +29,7 @@ function NewFood() {
         foodData.RestaurantId = parseInt(params.id);
         foodData.price = parseInt(food.price)
         //console.log(foodData);
-        await fetch(`/foods`, {
+        await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/foods`, {
         method: 'POST', 
         body: JSON.stringify(foodData),
         headers: { 'Content-Type': 'application/json' },

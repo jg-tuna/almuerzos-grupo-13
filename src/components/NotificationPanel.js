@@ -13,7 +13,7 @@ const NotificationPanel = (props) => {
 
   useEffect(() => {
     if (currentUser) {
-      fetch(`/users/${currentUser.id}/reservations`, requestOptions('GET', currentUser))
+      fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/users/${currentUser.id}/reservations`, requestOptions('GET', currentUser))
         .then((response) => response.json())
         .then((data) => {
           setReservation(data)

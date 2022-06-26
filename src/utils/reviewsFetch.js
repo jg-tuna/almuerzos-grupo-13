@@ -2,7 +2,7 @@ const fetchReviews = (setReviews, localId, currentUser) => {
   if (!currentUser){
     return
   }
-  fetch(`/reviews/${localId}/all`)
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reviews/${localId}/all`)
     .then((response) => response.json())
     .then((data) => {
       //setIsLoading(false);

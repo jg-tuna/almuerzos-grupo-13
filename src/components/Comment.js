@@ -13,7 +13,7 @@ const Comment = (props) => {
   const day = date.slice(8,10)
 
   const deleteReview = async (id) => {
-    await fetch(`/reviews/${id}`, { method: "DELETE", Authorization: `Bearer ${props.userToken}` })
+    await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reviews/${id}`, { method: "DELETE", Authorization: `Bearer ${props.userToken}` })
       .then(window.location.reload())
   }
   return (

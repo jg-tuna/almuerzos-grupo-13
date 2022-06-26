@@ -1,5 +1,5 @@
 const fetchFoods = (setIsLoading, setIsError, id, setFoods) => {
-  fetch(`/restaurants/${id}/foods`)
+  fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}/foods`)
     .then((response) => response.json())
     .then((data) => {
       setIsLoading(false);

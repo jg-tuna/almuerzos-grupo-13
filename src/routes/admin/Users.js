@@ -13,7 +13,7 @@ const AdminUsers = () => {
 
   // Función que hace el fetch de todos los usuarios
   const fetchUsers = () => {
-    fetch("/users", requestOptions('GET', currentUser))
+    fetch("https://almuerzos-grupo-13-backend.herokuapp.com/users", requestOptions('GET', currentUser))
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
@@ -31,7 +31,7 @@ const AdminUsers = () => {
   };
 
   const OnClickDelete = (id) => {
-    fetch(`/users/${id}`, requestOptions('DELETE', currentUser)).then(() => {
+    fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/users/${id}`, requestOptions('DELETE', currentUser)).then(() => {
       setUsers(users.filter((users) => users.id !== id));
     });
   };

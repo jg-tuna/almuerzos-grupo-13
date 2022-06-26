@@ -17,7 +17,7 @@ const ReservationTable = ({currentUser, ownerId, localId}) => {
 
 
   const buttonHandle = (id, ready, accepted) => {
-    fetch(`/reservations/${id}`, {
+    fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reservations/${id}`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${currentUser?.token}`,

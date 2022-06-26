@@ -31,7 +31,7 @@ function NewRestaurant() {
         e.preventDefault();
         let restaurantData = restaurant;
         restaurantData.UserId = currentUser.id;
-        await fetch('/restaurants', {
+        await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/restaurants', {
         method: 'POST',
         body: JSON.stringify(restaurantData),
         headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' },

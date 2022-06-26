@@ -22,7 +22,7 @@ const StarButton = (props) => {
     console.log(rating)
     if (!rating) {
       console.log("no encuentra rating")
-      await fetch('/ratings/',{
+      await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/ratings/',{
       method : 'POST', 
       body : JSON.stringify({
         value: value,
@@ -36,7 +36,7 @@ const StarButton = (props) => {
     }
     else {
       console.log("detecta rating")
-      await fetch('/ratings/',{
+      await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/ratings/',{
         method : 'PUT', 
         body : JSON.stringify({
           value: value,

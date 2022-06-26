@@ -61,7 +61,7 @@ const ResturantDetails = (props) => {
     e.preventDefault();
     // console.log('funciona');
     // let aux = JSON.stringify({UserId: user.id});
-    await fetch(`/restaurants/${params.id}/favorite`, {
+    await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${params.id}/favorite`, {
       method: 'POST',
       body: JSON.stringify({UserId: currentUser?.id}),
       headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' }
@@ -73,7 +73,7 @@ const ResturantDetails = (props) => {
     e.preventDefault();
     // console.log('funciona');
     // let aux = JSON.stringify({UserId: user.id});
-    await fetch(`/restaurants/${params.id}/favorite`, {
+    await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${params.id}/favorite`, {
       method: 'DELETE',
       body: JSON.stringify({UserId: currentUser.id}),
       headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' }
@@ -96,7 +96,7 @@ const ResturantDetails = (props) => {
     // e.preventDefault();
     if (!rating) {
       console.log("no encuentra rating")
-      await fetch('/ratings/',{
+      await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/ratings/',{
       method : 'POST', 
       body : JSON.stringify({
         value: value,
@@ -110,7 +110,7 @@ const ResturantDetails = (props) => {
     }
     else {
       // console.log("detecta rating")
-      await fetch('/ratings/',{
+      await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/ratings/',{
         method : 'PUT', 
         body : JSON.stringify({
           value: value,
@@ -126,7 +126,7 @@ const ResturantDetails = (props) => {
   }
 
   const deleteRestaurant = async (id) => {
-    await fetch(`/restaurants/${id}`, { method: "DELETE", 
+    await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`, { method: "DELETE", 
     headers : {Authorization: `Bearer ${props.userToken}` }})
       .then(navigate("/"))
   }

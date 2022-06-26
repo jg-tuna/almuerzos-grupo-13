@@ -54,7 +54,7 @@ function NewReview() {
         reviewData.RatingId = ratingId
         console.log(reviewData)
         //console.log(foodData);
-        await fetch(`/reviews`, {
+        await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/reviews`, {
         method: 'POST', 
         body: JSON.stringify(reviewData),
         headers: { Authorization: `Bearer ${currentUser?.token}`, 'Content-Type': 'application/json' },

@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const FoodCard = (props) => {
 
   const deleteFood = async (id) => {
-    await fetch(`/foods/${id}`, { method: "DELETE", Authorization: `Bearer ${props.userToken}` })
+    await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/foods/${id}`, { method: "DELETE", Authorization: `Bearer ${props.userToken}` })
       .then(window.location.reload())
   }
 
@@ -17,7 +17,7 @@ const FoodCard = (props) => {
       FoodId: props.id
     }
     
-    fetch("/reservations", {
+    fetch("https://almuerzos-grupo-13-backend.herokuapp.com/reservations", {
       method:"POST", body: JSON.stringify(values),
       headers: { Authorization: `Bearer ${props.userToken}`, 'Content-Type': 'application/json' }
     })

@@ -11,7 +11,7 @@ function EditRestaurant() {
 
     useEffect(() => {
         async function fetchdata() {
-            const currentData = await fetch(`/restaurants/${id}`, {
+            const currentData = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`, {
             method: 'GET', Authorization: `Bearer ${currentUser?.token}`
             });
             let info = await currentData.json();
@@ -69,7 +69,7 @@ function EditRestaurant() {
 
     const submit = async (e) => {
         e.preventDefault();
-        // const currentData = await fetch(`/restaurants/${id}`, {
+        // const currentData = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`, {
         //     method: 'GET'
         // });
         // let dataJson = await currentData.json();
@@ -101,7 +101,7 @@ function EditRestaurant() {
         console.log(contact);
         //console.log(restaurantData);
         console.log('primer log')
-        let res = await fetch(`/restaurants/${id}`, {
+        let res = await fetch(`https://almuerzos-grupo-13-backend.herokuapp.com/restaurants/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
             name: name,

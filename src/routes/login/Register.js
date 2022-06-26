@@ -25,7 +25,7 @@ function Register() {
     const submit = async (e) => {
         e.preventDefault();
         
-        let res = await fetch('/users', {
+        let res = await fetch('https://almuerzos-grupo-13-backend.herokuapp.com/users', {
         method: 'POST',
         body: JSON.stringify(user),
         headers: { 'Content-Type': 'application/json' },
