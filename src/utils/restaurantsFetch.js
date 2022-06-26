@@ -1,6 +1,6 @@
 
 const fetchLocals = (setIsLoading, setIsError, setLocals) => {
-  fetch("/restaurants")
+  fetch("https://almuerzos-grupo-13-backend.herokuapp.com/restaurants")
     .then((response) => response.json())
     .then((data) => {
       setIsLoading(false);
